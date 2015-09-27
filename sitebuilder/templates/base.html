@@ -34,6 +34,9 @@
 		    <li {% if slug == 'signature' %} class="active"{% endif %}>
 		        <a href="{% url 'page' 'signature' %}">Signature</a>
 		    </li>
+                    <li {% if slug == 'pdf' %} class="active"{% endif %}>
+                        <a href="{% url 'page' 'pdf' %}">PDF</a>
+                    </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li {% if slug == 'login' %}class="active"{% endif %}>

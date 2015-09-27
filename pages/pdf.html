@@ -7,7 +7,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <h2>About</h2>
+            <h2>PDF Page</h2>
             <p>{% lorem %}</p>
         </div>
         <div class="col-md-6">
@@ -18,6 +18,9 @@
                     href="{% url 'page' 'contact' %}" role="button">Contact us »</a>
             </p>
         </div>
+        <a href="http://www.w3schools.com">Visit W3Schools.com!</a></br>
+	<a href="{% url 'page' 'signature' %}">Signature page</a></br>
+	<a href="{% url 'page' 'pdf_view' %}">PDF View</a>
     </div>
 </div>
 
