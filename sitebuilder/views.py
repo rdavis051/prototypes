@@ -6,16 +6,18 @@ from django.http import Http404
 from django.shortcuts import render
 from django.template import Template
 from django.utils._os import safe_join
-
-
 from django.views import generic
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.http import HttpResponse
+
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.pagesizes import landscape
 from reportlab.platypus import Image
+
+from ipware.ip import get_ip
+
 import datetime
 
 BASE_DIR = os.path.dirname(__file__)
@@ -45,6 +47,11 @@ def page(request, slug='index'):
         'slug': slug,
         'page': page,
     }
+    ip = get_ip(request)
+    if ip is not None:
+	print "IP address: {0}".format(ip)
+    else:
+	print "IP Adress Not Found!"
     if file_name == 'pdf_view.html':
         #print 'In if statement'
         pdf_view_response = pdf_view(request)
